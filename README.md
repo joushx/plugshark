@@ -13,10 +13,61 @@ still experimental.
 
 ## How to Use
 
-Check out the <a href="simple-example">simple-example</a> project in this repo for a basic template to extend.
+Follow the <a href="simple-example">simple-example</a> template in this repo to begin a new project.
 
 Add to your `Cargo.toml` using:
 - `plugshark = { git = "https://github.com/Gbps/plugshark", tag = "0.0.1" }`
+
+Compiled `libfoo.so` files can be loaded into Wireshark by putting it into your local plugins directory:
+
+```
+cp ./target/debug/libfoo.so ~/.local/lib/wireshark/plugins/4.4/epan/
+```
+
+## Example
+
+```rust
+// Callback for dissection, called when a packet for this protocol is detected and dissected.
+unsafe fn dissect_callback(mut tree: DissectorSubTree) {
+    // Setting the info column
+    tree.set_info_column("This is some info"); 
+
+    // Pushing a single field into the dissector
+    tree.add_field("test.u32", IndexPosition::Current(0), 4, FieldEncoding::LittleEndian);
+
+    // Using the same field id multiple times
+    tree.add_field("test.u8", IndexPosition::Current(0),1, FieldEncoding::LittleEndian);
+    tree.add_field("test.u8", IndexPosition::Current(0),1, FieldEncoding::LittleEndian);
+    tree.add_field("test.u8", IndexPosition::Current(0), 1, FieldEncoding::LittleEndian);
+
+    // Appending text to the field
+    let mut test = tree.add_field("test.u8", IndexPosition::Current(0), 1, FieldEncoding::LittleEndian);
+    test.append_text(" (Some Appended Text)");
+}
+```
+
+Result from [tshark](https://www.wireshark.org/docs/man-pages/tshark.html):
+
+```
+User Datagram Protocol, Src Port: 56265, Dst Port: 1234
+    Source Port: 56265
+    Destination Port: 1234
+    Length: 17
+    Checksum: 0xfe24 [unverified]
+    [Checksum Status: Unverified]
+    [Stream index: 0]
+    [Stream Packet Number: 1]
+    [Timestamps]
+        [Time since first frame: 0.000000000 seconds]
+        [Time since previous frame: 0.000000000 seconds]
+    UDP payload (9 bytes)
+Test Protocol
+    UInt32 Field: 0x64636261
+    UInt8 Field: Test1 (0x65)
+    UInt8 Field: Test2 (0x66)
+    UInt8 Field: Test3 (0x67)
+    UInt8 Field: Test4 (0x68) (Some Appended Text)
+```
 
 ## Motivation
 
