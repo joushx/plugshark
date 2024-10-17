@@ -1,6 +1,6 @@
 # plugshark - An experimental Wireshark dissector framework for Rust
 
-Plugshark provides a framework for wirting Wireshark dissector plugins. Projects utilizing
+Plugshark provides a framework for writing Wireshark dissector plugins. Projects utilizing
 this framework can build dynamic libraries that can be loaded into Wireshark to build
 protocol analyzers.
 
