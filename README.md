@@ -8,7 +8,7 @@ Plugshark is (currently) an unsafe plugin framework and provides no memory safet
 project is written to be memory safe, the Wireshark plugin interface does not always establish clear
 rules on memory management. Therefore, the interfaces are marked unsafe until proper testing is performed.
 
-All users of the framework mus tunderstand that this is still experimental and is not the basis for any
+All users of the framework must understand that this is still experimental and is not the basis for any
 commercial or security-critical application.
 
 ## How to Use
