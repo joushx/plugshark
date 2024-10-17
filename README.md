@@ -36,8 +36,8 @@ unsafe fn dissect_callback(mut tree: DissectorSubTree) {
     tree.add_field("test.u32", IndexPosition::Current(0), 4, FieldEncoding::LittleEndian);
 
     // Using the same field id multiple times
-    tree.add_field("test.u8", IndexPosition::Current(0),1, FieldEncoding::LittleEndian);
-    tree.add_field("test.u8", IndexPosition::Current(0),1, FieldEncoding::LittleEndian);
+    tree.add_field("test.u8", IndexPosition::Current(0), 1, FieldEncoding::LittleEndian);
+    tree.add_field("test.u8", IndexPosition::Current(0), 1, FieldEncoding::LittleEndian);
     tree.add_field("test.u8", IndexPosition::Current(0), 1, FieldEncoding::LittleEndian);
 
     // Appending text to the field
