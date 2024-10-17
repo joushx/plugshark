@@ -11,6 +11,8 @@ rules on memory management. Therefore, the interfaces are marked unsafe until pr
 All users of the framework must understand that this is still experimental and is not the basis for any
 commercial or security-critical application.
 
+Currently supports: **Wireshark v4.4 for Linux**
+
 ## How to Use
 
 Follow the <a href="simple-example">simple-example</a> template in this repo to begin a new project.
