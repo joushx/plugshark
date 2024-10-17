@@ -9,4 +9,4 @@ crate-type   = ["rlib", "cdylib"]
 
 [dependencies]
 epan-sys = { git = "https://github.com/Gbps/epan-sys" }
-plugshark = { path = "../", version = "0.0.1" }
+plugshark = { git = "https://github.com/Gbps/plugshark", tag = "0.0.1" }

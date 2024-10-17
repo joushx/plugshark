@@ -59,6 +59,7 @@ checksum = "953ec861398dccce10c670dfeaf3ec4911ca479e9c02154b3a215178c5f566f2"
 [[package]]
 name = "plugshark"
 version = "0.0.1"
+source = "git+https://github.com/Gbps/plugshark?tag=0.0.1#673871b8908049c6c38ffe07004c565e27d7c402"
 dependencies = [
  "bumpalo",
  "bytestream",
