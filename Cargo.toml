@@ -1,0 +1,18 @@
+[package]
+name = "plugshark"
+version = "0.0.1"
+edition = "2021"
+license = "MIT OR Apache-2.0"
+description = "An experimental Wireshark plugin framework for Rust"
+homepage = "https://github.com/Gbps/plugshark"
+repository = "https://github.com/Gbps/plugshark"
+keywords = ["wireshark", "ffi"]
+readme = "README.md"
+
+[lib]
+name = "plugshark"
+
+[dependencies]
+epan-sys = { git = "https://github.com/Gbps/epan-sys.git" }
+bumpalo = "3.7"
+bytestream = "0.4"

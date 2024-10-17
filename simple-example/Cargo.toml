@@ -1,0 +1,12 @@
+[package]
+name = "simple-example"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+name         = "foo"
+crate-type   = ["rlib", "cdylib"]
+
+[dependencies]
+epan-sys = { git = "https://github.com/Gbps/epan-sys" }
+plugshark = { path = "../", version = "0.0.1" }
