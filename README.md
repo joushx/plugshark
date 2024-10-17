@@ -15,6 +15,9 @@ still experimental.
 
 Check out the <a href="simple-example">simple-example</a> project in this repo for a basic template to extend.
 
+Add to your `Cargo.toml` using:
+- `plugshark = { git = "https://github.com/Gbps/plugshark", tag = "0.0.1" }`
+
 ## Motivation
 
 Currently there are only two official options for writing Wireshark dissectors, either using
