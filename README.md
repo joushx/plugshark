@@ -75,7 +75,7 @@ Currently there are only two official options for writing Wireshark dissectors, 
 the [poorly documented C API](https://www.wireshark.org/docs/wsdg_html_chunked/ChDissectAdd.html) or
 the less performant [Lua API](https://www.wireshark.org/docs/wsdg_html_chunked/wsluarm_modules.html).
 
-There exists a Rust project for crating dissectors called [WSDF](https://github.com/ghpr-asia/wsdf), but
+There exists a Rust project for creating dissectors called [WSDF](https://github.com/ghpr-asia/wsdf), but
 it mainly focuses on writing analyzers from Rust structures using a declarative method. This doesn't work
 so well when you have more complex dissector requirements, such as protocols that work entirely on a bitstream
 level.
