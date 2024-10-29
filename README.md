@@ -28,6 +28,8 @@ cp ./target/debug/libfoo.so ~/.local/lib/wireshark/plugins/4.4/epan/
 
 ## Example
 
+For a more complex example, see: https://github.com/Gbps/elpis-parser
+
 ```rust
 // Callback for dissection, called when a packet for this protocol is detected and dissected.
 unsafe fn dissect_callback(mut tree: DissectorSubTree) {
